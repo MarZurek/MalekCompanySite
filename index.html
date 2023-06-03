@@ -7,6 +7,8 @@
     <title>Strona główna Malek Company</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="buton.css">
+    <link href="css/fontello.css" rel="stylesheet" type="text/css"/>
+
 </head>
 <body>
     <header class="main-header"> 
@@ -14,6 +16,7 @@
         <p >W dupe ... Ltd</p>
     </header>
     <hr>
+
     <main>
         <div class="choose-menu mak-photo">
             <h3>Mak photo</h3>
@@ -38,13 +41,33 @@
     <hr>
 
 
-    <footer>
+    <footer id="footer-undermain">
         <div class="contact-footer"><h2> Kontakt:</h2></div>
-        <div class="contact-footer">+48 720 441 449</div>
-        <div class="contact-footer">Chrosna 79 <br>
-            32-084 Chrosna</div>
-        <div class="contact-footer">makphoto@malekinvestments.pl</div>
+        <div class="contact-footer"><p class=""><i class="icon-phone">+48 720 441 449</i> </p></div>
+        <div class="contact-footer"><p class=""><a class="location" href="https://www.google.com/maps/place/Chrosna+79,+32-084+Chrosna/@50.0796999,19.708737,17z/data=!3m1!4b1!4m6!3m5!1s0x4716f60b433592cd:0x48ab05840582ac51!8m2!3d50.0796965!4d19.7113119!16s%2Fg%2F11tg4466q7?hl=pl-PL&entry=ttu" target="_blank">
+        <i class="icon-location">Chrosna 79<br>32-084 Chrosna </i> </a></p></div>
+        <div class="contact-footer"><p class="mail"><i class="icon-mail-alt"><span class="copied-mail" onclick="skopiujDoSchowka('makphoto@malekinvestments.pl')">makphoto@malekinvestments.pl</span></i ></p></div>
         
     </footer>
+    <div id="toast" class="toast">Skopiowano do schowka</div>
+
+
+    <script>
+        function skopiujDoSchowka(adresEmail) {
+            var textarea = document.createElement('textarea');
+            textarea.value = adresEmail;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            
+            var toast = document.getElementById("toast");
+            toast.className = "toast show";
+            setTimeout(function(){
+                toast.className = "toast";
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
