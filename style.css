@@ -56,7 +56,7 @@ main{
 }
 
 .mak-photo{
-    background: url(obrazy/PROMO.png) no-repeat;
+    background: url(../obrazy/PROMO.png) no-repeat;
     background-size: cover;
     color: black;
 }
