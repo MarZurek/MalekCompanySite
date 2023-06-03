@@ -7,6 +7,24 @@
     <title>Strona główna Malek Company</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="buton.css">
+    <link href="../css/fontello.css" rel="stylesheet" type="text/css"/>
+    <script>
+        function skopiujDoSchowka(adresEmail) {
+            var textarea = document.createElement('textarea');
+            textarea.value = adresEmail;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            
+            var toast = document.getElementById("toast");
+            toast.className = "toast show";
+            setTimeout(function(){
+                toast.className = "toast";
+            }, 2000);
+        }
+    </script>
 </head>
 <body>
     <header class="main-header"> 
@@ -46,5 +64,9 @@
         <div class="contact-footer">makphoto@malekinvestments.pl</div>
         
     </footer>
+    <div id="toast" class="toast">Skopiowano do schowka</div>
+
+
+
 </body>
 </html>
